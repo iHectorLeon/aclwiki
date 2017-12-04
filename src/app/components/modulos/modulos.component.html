@@ -1,0 +1,40 @@
+<br>
+<div class="row animated fast fadeIn" *ngIf="articulo.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      Aún no se agrega información para este modulo
+    </div>
+  </div>
+</div>
+
+<div class="row animated fast fadeIn">
+  <div class="col-2">
+    <ul class="list-group" *ngFor="let referencia of articulo">
+      <li class="list-group-item">{{referencia.titulo}}</li>
+    </ul>
+    <br>
+    <a href="articulos" class="btn btn-outline-info btn-block">Regresar</a>
+  </div>
+  <div class="col-9">
+    <div class="card animated fast fadeIn" *ngFor="let referencia of articulo">
+      <h2 class="card-header">{{referencia.titulo}}</h2>
+      <div class="card-body">
+        <h5 class="card-title">Modulo {{ referencia.modulo }}</h5>
+        <p class="card-text">{{ referencia.resumen }}</p>
+        <img class="card-img-top imagenIco" [src]="referencia.imagen" [alt]="incidentes">
+        <img class="card-img-top imagenLogo" [src]="referencia.ico" [alt]="incidentes">
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="card animated fast fadeIn" *ngFor="let referencia of articulo">
+  <h2 class="card-header">{{referencia.titulo}}</h2>
+  <div class="card-body">
+    <h5 class="card-title">Modulo {{ referencia.modulo }}</h5>
+    <p class="card-text">{{ referencia.resumen }}</p>
+    <img class="card-img-top imagenIco" [src]="referencia.imagen" [alt]="incidentes">
+    <img class="card-img-top imagenLogo" [src]="referencia.ico" [alt]="incidentes">
+  </div>
+</div>
+-->

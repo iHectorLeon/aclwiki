@@ -1,0 +1,18 @@
+<h1>Resultado de la busqueda para el termino: {{ termino }}</h1>
+<hr>
+<div class="row animated fast fadeIn" *ngIf="resultado.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No se encontraron coincidencias con el termino: {{ termino }}
+    </div>
+  </div>
+</div>
+<div class="card animated fast fadeIn" *ngFor="let termino of resultado">
+  <h2 class="card-header">{{termino.titulo}}</h2>
+  <div class="card-body">
+    <h5 class="card-title">Modulo {{ termino.modulo }}</h5>
+    <p class="card-text">{{ termino.resumen }}</p>
+    <img class="card-img-top imagenIco" [src]="termino.imagen" [alt]="incidentes">
+    <img class="card-img-top imagenLogo" [src]="termino.ico" [alt]="incidentes">
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<h1>Modulos</h1>
+<hr>
+<!--div class="card-columns">
+  <div class="card p-1 animated fast fadeIn" *ngFor="let mod of modulo, let id=index">
+    <img class="card-img-top imagen" [src]="mod.imagen" [alt]="incidentes">
+    <div class="card-body">
+      <h4 class="card-title" #modulo>{{ mod.modulo}}</h4>
+      <p class="card-text">{{ mod.descripcion }}</p>
+      <p class="card-text"><small class="text-muted">{{ mod.fecha }}</small></p>
+      <button (click)="verModulo(mod.modulo)"
+      type="button" class="btn btn-outline-info btn-block">
+      Ver mas ...
+      </button>
+    </div>
+  </div>
+</div-->
+<div class="row animated fadeIn fast" *ngFor="let mod of modulo, let id=index">
+  <div class="col-md-8">
+    <h3>{{ mod.modulo }}</h3>
+    <hr>
+    <p>
+      {{ mod.descripcion }}
+    </p>
+  </div>
+  <div class="col-md-2">
+    <img [src]="mod.imagen" class="img-fluid" [alt]="mod.modulo">
+    <br><br>
+    <button (click)="verModulo(mod.modulo)"
+      type="button" class="btn btn-outline-info btn-block">
+      Ver mas ...
+    </button>
+  </div>
+</div>
